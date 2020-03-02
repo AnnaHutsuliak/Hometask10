@@ -22,8 +22,8 @@ public class Books implements Serializable {
     public void setBooks(Book[] books) { this.books = books; }
 
     public void printBooks() {
-        for (Book elem : books) {
-            elem.viewBook();
+        for (Book book : books) {
+            System.out.println(book.toString());
         }
     }
 
@@ -84,5 +84,9 @@ public class Books implements Serializable {
         Book[] booksAfterSorting3 = Arrays.copyOf(books, books.length);
         Arrays.sort(booksAfterSorting3, new ComparatorPrice());
         printBooksAfterSorting(booksAfterSorting3);
+    }
+    @Override
+    public String toString() {
+        return Arrays.toString(books);
     }
 }

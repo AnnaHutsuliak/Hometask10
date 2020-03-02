@@ -36,12 +36,13 @@ public class Book implements Serializable {
     public int getPrice() { return price; }
     public void setPrice(int price) { this.price = price; }
 
-    public void viewBook() {
-        System.out.println("number_ID=" + number_ID
+    @Override
+    public String toString() {
+        return "number_ID=" + number_ID
                 + ", name=" + name + ", author=" + author
                 + ", publishing_house=" + publishing_house
                 + ", year_of_publication=" + year_of_publication
                 + ", page_count=" + page_count
-                + ", price=" + price);
+                + ", price=" + price;
     }
 }

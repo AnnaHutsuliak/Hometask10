@@ -1,6 +1,5 @@
 package come.epam.hometask;
 
-import javax.xml.bind.ValidationException;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.util.Scanner;
