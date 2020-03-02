@@ -1,10 +1,10 @@
 package come.epam.hometask;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
-public class Books<newBooks> implements Serializable {
-
-    private Book[] books = new Book[]{
+public class Books implements Serializable {
+ private Book[] books = new Book[]{
             new Book(101, "Java", "Ivanhoe", "Kiev",
                     2010, 700, 250),
             new Book(102, "PHP", "Ivanhoe", "London",
@@ -18,17 +18,12 @@ public class Books<newBooks> implements Serializable {
             new Book(106, "C++", "Kovalov", "Lviv",
                     2020, 500, 350)};
 
-    public Books() {
-    }
-
     public Book[] getBooks() { return books; }
-    public void setBooks(Book[] books) {
-        this.books = books;
-    }
+    public void setBooks(Book[] books) { this.books = books; }
 
     public void printBooks() {
         for (Book elem : books) {
-          System.out.println(elem.toString());
+            elem.viewBook();
         }
     }
 
@@ -61,10 +56,9 @@ public class Books<newBooks> implements Serializable {
         }
         return Arrays.copyOf(booksAuthor, j);
     }
-
-    public void revaluation(int number_percent) {
+    public <number_percent> void revaluation(int number_percent) {
         for (Book elem : books) {
-            elem.setPrice(elem.getPrice() + (elem.getPrice() * number_percent / 100));
+            elem.setPrice(elem.getPrice() +(elem.getPrice() * number_percent/ 100));
         }
     }
 
@@ -77,25 +71,18 @@ public class Books<newBooks> implements Serializable {
     public void sortByAuthor() {
         Book [] booksAfterSorting = Arrays.copyOf(books, books.length);
         Arrays.sort(booksAfterSorting, new ComparatorAuthor());
-        System.out.println("Отсортированные книги по автору: ");
         printBooksAfterSorting(booksAfterSorting);
     }
 
     public void sortByPublishing_House() {
         Book [] booksAfterSorting1 = Arrays.copyOf(books, books.length);
         Arrays.sort(booksAfterSorting1, new ComparatorPublishingHouse());
-        System.out.println("Отсортированные книги по издательству: ");
         printBooksAfterSorting(booksAfterSorting1);
     }
 
     public void sortByPrice() {
         Book[] booksAfterSorting3 = Arrays.copyOf(books, books.length);
         Arrays.sort(booksAfterSorting3, new ComparatorPrice());
-        System.out.println("Отсортированные книги по цене: ");
         printBooksAfterSorting(booksAfterSorting3);
     }
-
 }
-
-
-

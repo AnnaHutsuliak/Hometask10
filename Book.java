@@ -1,6 +1,8 @@
 package come.epam.hometask;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private int number_ID;
     private String name;
     private String author;
@@ -23,23 +25,23 @@ public class Book {
     public void setNumber_ID(int number_ID) { this.number_ID = number_ID; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public String getAuthor() { return author; }
+    public String getAuthor() {return author; }
     public void setAuthor(String author) { this.author = author; }
     public String getPublishing_house() { return publishing_house; }
     public void setPublishing_house(String publishing_house) { this.publishing_house = publishing_house; }
     public int getYear_of_publication() { return year_of_publication; }
     public void setYear_of_publication(int year_of_publication) { this.year_of_publication = year_of_publication; }
-    public int getPage_count() { return page_count; }
+    public int getPage_count() { return page_count;}
     public void setPage_count(int page_count) { this.page_count = year_of_publication; }
     public int getPrice() { return price; }
     public void setPrice(int price) { this.price = price; }
 
-        public String toString() {
-        return "number_ID=" + number_ID
+    public void viewBook() {
+        System.out.println("number_ID=" + number_ID
                 + ", name=" + name + ", author=" + author
                 + ", publishing_house=" + publishing_house
                 + ", year_of_publication=" + year_of_publication
                 + ", page_count=" + page_count
-                + ", price=" + price;
+                + ", price=" + price);
     }
 }
